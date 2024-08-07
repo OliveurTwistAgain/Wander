@@ -12,14 +12,25 @@ création d'un Dockerfile pour installer et lancer Ghost
 Nom des variables API utilisées : 
 
 CLOUDINARY_URL=cloudinary://xxx
+
 DATABASE_CLIENT=postgres
+
 DATABASE_HOST=xxxx.supabase.com
+
 DATABASE_NAME=xxx
+
 DATABASE_PASSWORD=xxx
+
 DATABASE_PORT=6543
+
 DATABASE_USER=postgres.xxx
+
 MAIL__OPTIONS__AUTH__PASS=xxx
+
 MAIL__OPTIONS__AUTH__USER=postmaster@xxx.mailgun.org
+
 MAIL__OPTIONS__SERVICE=Mailgun
+
 MAIL__TRANSPORT=SMTP
+
 URL=https://xxx-xxx-xxx.koyeb.app/
