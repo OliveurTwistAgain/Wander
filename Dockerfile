@@ -19,7 +19,7 @@ ENV mail__options__auth__user=${MAIL__OPTIONS__AUTH__USER}
 ENV mail__options__auth__pass=${MAIL__OPTIONS__AUTH__PASS}
 ENV url=${URL}
 
-# Configurer et lancer Ghost avec SMTP Mailgun
+# Configurer et lancer Ghost avec le ghost-storage-cloudinary et les options mailgun
 RUN set -ex; \
     su-exec node ghost config storage.active ghost-storage-cloudinary; \
     su-exec node ghost config storage.ghost-storage-cloudinary.upload.use_filename true; \
@@ -27,5 +27,8 @@ RUN set -ex; \
     su-exec node ghost config storage.ghost-storage-cloudinary.upload.overwrite false; \
     su-exec node ghost config storage.ghost-storage-cloudinary.fetch.quality auto; \
     su-exec node ghost config storage.ghost-storage-cloudinary.fetch.cdn_subdomain true; \
-    su-exec node ghost config mail.transport "SMTP"; \
-    su-exec node ghost config mail.options.service "Mailgun";
+    su-exec node ghost config mail.transport ${MAIL__TRANSPORT}; \
+    su-exec node ghost config mail.options.service ${MAIL__OPTIONS__SERVICE}; \
+    su-exec node ghost config mail.options.auth.user ${MAIL__OPTIONS__AUTH__USER}; \
+    su-exec node ghost config mail.options.auth.pass ${MAIL__OPTIONS__AUTH__PASS}; \
+    su-exec node ghost config url ${URL};
