@@ -1,0 +1,38 @@
+{
+    "url": "process.env.URL",
+    "database": {
+        "client": "mysql",
+        "connection": {
+            "host": "process.env.DATABASE_HOST",
+            "user": "process.env.DATABASE_USER",
+            "password": "process.env.DATABASE_PASSWORD",
+            "database": "process.env.DATABASE_NAME",
+            "port": "process.env.DATABASE_PORT"
+        }
+    },
+    "storage": {
+        "active": "ghost-storage-cloudinary",
+        "ghost-storage-cloudinary": {
+            "useDatedFolder": false,
+            "auth": {
+                "cloud_name": "process.env.CLOUDINARY_CLOUD_NAME",
+                "api_key": "process.env.CLOUDINARY_API_KEY",
+                "api_secret": "process.env.CLOUDINARY_API_SECRET"
+            },
+            "upload": {
+                "use_filename": true,
+                "unique_filename": false,
+                "overwrite": true
+            }
+        }
+    },
+    "logging": {
+        "level": "info",
+        "transport": [
+            "stdout"
+        ]
+    },
+    "paths": {
+        "contentPath": "content/"
+    }
+}
