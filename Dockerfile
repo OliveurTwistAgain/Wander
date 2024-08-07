@@ -8,19 +8,20 @@ COPY --chown=node:node --from=cloudinary $GHOST_INSTALL/node_modules/ghost-stora
 
 # Utiliser les variables d'environnement pour configurer Ghost
 ENV url=${URL}
-ENV database__client=postgres
+ENV database__client=${DATABASE_CLIENT}
 ENV database__connection__host=${DATABASE_HOST}
 ENV database__connection__user=${DATABASE_USER}
 ENV database__connection__password=${DATABASE_PASSWORD}
 ENV database__connection__database=${DATABASE_NAME}
 ENV database__connection__port=${DATABASE_PORT}
-ENV mail__transport=SMTP
-ENV mail__options__service=Mailgun
+ENV mail__transport=${MAIL__TRANSPORT}
+ENV mail__options__service=${MAIL__OPTIONS__SERVICE}
 ENV mail__options__auth__user=${MAIL__OPTIONS__AUTH__USER}
 ENV mail__options__auth__pass=${MAIL__OPTIONS__AUTH__PASS}
 
 # Afficher les variables d'environnement pour le débogage
 RUN echo "URL: $url"
+RUN echo "DATABASE_CLIENT: $database__client"
 RUN echo "DATABASE_HOST: $database__connection__host"
 RUN echo "DATABASE_USER: $database__connection__user"
 RUN echo "DATABASE_PASSWORD: $database__connection__password"
