@@ -2,10 +2,14 @@ Déployer Ghost sur Koyeb depuis un Dockerfile avec variables API d'environnemen
 
 Requis : 
 
-ouvrir un compte koyeb 
+ouvrir un compte koyeb
+
 Ouvrir un compte cloudinary (images, médias)
+
 ouvrir un compte mailgun (emails)
+
 ouvrir un compte supabase (db postgres)
+
 création d'un Dockerfile pour installer et lancer Ghost
 
 
