@@ -17,14 +17,5 @@ RUN groupadd -r ghost && useradd -r -g ghost ghost && \
 # Utiliser l'utilisateur non-root pour exécuter Ghost
 USER ghost
 
-# Définir les variables d'environnement par défaut
-ENV NODE_ENV=production
-ENV DATABASE_HOST=mysql-wander.alwaysdata.net
-ENV DATABASE_USER=wander
-ENV DATABASE_PASSWORD=rangiroa
-ENV DATABASE_NAME=wander_db
-ENV DATABASE_PORT=3306
-ENV CLOUDINARY_URL=cloudinary://988738855795855:x9AxQ6Eid6CNxBzvvbEBLyyMuv8@ducxgwmbk
-
 # Commande pour démarrer Ghost
 CMD ["ghost", "run"]
