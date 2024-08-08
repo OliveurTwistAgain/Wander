@@ -1,6 +1,10 @@
 # Utiliser l'image officielle Ghost comme image de base
 FROM ghost:latest
 
+# Installer gettext pour envsubst
+USER root
+RUN apt-get update && apt-get install -y gettext
+
 # Installer l'adaptateur Cloudinary pour Ghost
 RUN npm install ghost-storage-cloudinary
 
