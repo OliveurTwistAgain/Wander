@@ -1,13 +1,13 @@
 {
-    "url": "http://localhost:2368",
+    "url": "$URL",
     "database": {
         "client": "mysql",
         "connection": {
-            "host": "process.env.DATABASE_HOST",
-            "user": "process.env.DATABASE_USER",
-            "password": "process.env.DATABASE_PASSWORD",
-            "database": "process.env.DATABASE_NAME",
-            "port": "process.env.DATABASE_PORT"
+            "host": "$DATABASE_HOST",
+            "user": "$DATABASE_USER",
+            "password": "$DATABASE_PASSWORD",
+            "database": "$DATABASE_NAME",
+            "port": "$DATABASE_PORT"
         }
     },
     "storage": {
@@ -15,9 +15,9 @@
         "ghost-storage-cloudinary": {
             "useDatedFolder": false,
             "auth": {
-                "cloud_name": "process.env.CLOUDINARY_CLOUD_NAME",
-                "api_key": "process.env.CLOUDINARY_API_KEY",
-                "api_secret": "process.env.CLOUDINARY_API_SECRET"
+                "cloud_name": "$CLOUDINARY_CLOUD_NAME",
+                "api_key": "$CLOUDINARY_API_KEY",
+                "api_secret": "$CLOUDINARY_API_SECRET"
             },
             "upload": {
                 "use_filename": true,
