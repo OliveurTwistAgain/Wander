@@ -10,7 +10,14 @@ COPY config.production.json /var/lib/ghost/config.production.json
 # Exposer le port par défaut utilisé par Ghost
 EXPOSE 2368
 
-# Définir les variables d'environnement par défaut (optionnel, peut être redéfini dans l'environnement Koyeb)
+# Créer un utilisateur non-root et changer le propriétaire des fichiers
+RUN groupadd -r ghost && useradd -r -g ghost ghost && \
+    chown -R ghost:ghost /var/lib/ghost
+
+# Utiliser l'utilisateur non-root pour exécuter Ghost
+USER ghost
+
+# Définir les variables d'environnement par défaut
 ENV NODE_ENV=production
 ENV DATABASE_HOST=mysql-wander.alwaysdata.net
 ENV DATABASE_USER=wander
